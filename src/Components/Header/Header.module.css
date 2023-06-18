@@ -1,0 +1,20 @@
+.nav{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    box-shadow: 1px 1px 6px 4px lightgray;
+}
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    box-shadow: 1px 1px 6px 4px lightgray;
+}
+.header a{
+    position: absolute;
+    left: 14%;
+    font-size: 1.5rem;
+    font-weight: 500;
+}

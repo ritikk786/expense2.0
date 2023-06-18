@@ -1,0 +1,44 @@
+.main{
+    flex: 0.3;
+    display: flex;
+    margin:  1rem;
+    /* border: 1px solid; */
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px darkorchid;
+    justify-content: space-between;
+    align-items: center;
+    height: 8rem;
+    background-color: ghostwhite;
+}
+.main h5{
+    margin-bottom: 2rem;
+}
+.main button{
+    background: transparent;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #198754;
+    background-color: #198754;
+    color: white;
+}
+.main span{
+    margin-left: 0.4rem;
+}
+.main:hover{
+    background-color: #198754;
+    color: white;
+    box-shadow: none;
+    
+}
+.main:hover button{
+    background-color: white;
+    color: black;
+    font-weight: 500;
+}
+
+@media screen and (max-width:786px) {
+    .main{
+        flex:1;
+    }
+}

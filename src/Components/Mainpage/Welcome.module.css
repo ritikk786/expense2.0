@@ -1,0 +1,29 @@
+.container{
+    margin: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.component {
+    background-color: white;
+    flex: 0.3;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around
+}
+.table{
+   
+    display: block;
+    flex : 0.7;
+    height: 10vh;
+    padding: 2rem;
+    
+}
+
+@media screen and (max-width:786px) {
+    .component{
+        flex-direction:column;
+    }
+}

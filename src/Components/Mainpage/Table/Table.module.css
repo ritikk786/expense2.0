@@ -1,0 +1,15 @@
+.container{
+    height: 60vh;
+    overflow: scroll;
+    box-shadow: -1px 2px 6px 5px lightgreen;;
+
+}
+
+
+.container table{
+    box-shadow: 1px 1px 8px 1px darkgray;
+}
+.container table thead{
+    position: sticky;
+    top: 0;
+}
