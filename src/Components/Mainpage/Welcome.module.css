@@ -22,8 +22,11 @@
     
 }
 
-@media screen and (max-width:786px) {
+@media screen and (max-width:992px) {
     .component{
         flex-direction:column;
+    }
+    .table{
+        padding:1rem;
     }
 }

@@ -42,19 +42,19 @@ const Totalexpense = () => {
         <div className={Classes.main}>
             <div>
                 <h5>Total Spending</h5>
-                <Button variant="contained" onClick={handleShow}>Add expense<span><AddCircleOutlineRoundedIcon /></span></Button>
+                <Button variant="contained" onClick={handleShow}>ADD EXPENSE<span><AddCircleOutlineRoundedIcon /></span></Button>
             </div>
             <div className={Classes.content}>
                 <CurrencyRupeeOutlinedIcon /><span>{totalamount}</span>
             </div>
-            <Modal
+             <Modal
                 show={show}
                 onHide={handleClose}
                 backdrop="static"
                 keyboard={false}
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>Add Expense</Modal.Title>
+                    <Modal.Title>{isedit ? 'Edit Expense' : 'Add Expense'}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                         <AddExpense/>

@@ -9,7 +9,7 @@ const editexpense = createSlice({
     initialState :  editdata,
     reducers:{
         editmode(state,action){
-            console.log(action.payload,'editmode thunk')
+            // console.log(action.payload,'editmode thunk')
             state.isedit = true;
             state.editdata = action.payload;
         },

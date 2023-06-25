@@ -16,11 +16,11 @@ const TableData = ()=>{
     const useremail = useSelector((state)=> state.loginmange.email)
     const dispatch = useDispatch();
     const {sendRequest,isLoading} = useHook();
-    console.log(expensedata)
+    // console.log(expensedata)
     
     // delte function
     const deletedata = (id)=>{
-      console.log(id)
+      // console.log(id)
       let useremailroute = useremail.replace('@','').replace('.','')
             sendRequest({
                 url : `https://expense2data-default-rtdb.firebaseio.com/expense/${useremailroute}/${id}.json`,
@@ -32,7 +32,7 @@ const TableData = ()=>{
     // edit function
     const editdata = (item)=>{
       dispatch(editAction.editmode(item))
-      console.log(item,isedit)
+      // console.log(item,isedit)
     }
     return(
         <div className={Classes.container}>
@@ -52,8 +52,7 @@ const TableData = ()=>{
       <tbody>
       {expensedata.length === 0 && <tr style={{textAlign:'center'}}> <td colSpan={6} ><p>add some expense</p></td></tr>}
         {expensedata.map((item,i)=>
-  
-          <tr  Key={item.id}>
+          <tr>
             <td>{i+1}</td>
             <td>{item.description}</td>
             <td>{item.category}</td>
@@ -61,16 +60,10 @@ const TableData = ()=>{
             <td>{item.price}</td>
             <td>
               <Button onClick={()=>editdata(item)}><EditNoteIcon/></Button> &nbsp; / &nbsp;
-              <Button onClick={()=>deletedata(item.id)}>
-               <DeleteIcon style={{color:'red'}} />
-                
-                </Button>
+              <Button onClick={()=>deletedata(item.id)}> <DeleteIcon style={{color:'red'}} /></Button>
              </td>
             </tr>
-          
         )}
-
-
       </tbody>
 
     </Table>

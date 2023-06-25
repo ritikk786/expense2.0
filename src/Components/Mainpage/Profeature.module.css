@@ -6,7 +6,7 @@
     padding: 1rem;
     border-radius: 10px;
 
-    box-shadow: 1px 1px 5px 1px red;
+    box-shadow: 1px 1px 5px 1px darkslategray;
     /* box-shadow: 1px 1px 5px 1px lightslategray; */
     justify-content: space-between;
     align-items: center;
@@ -14,7 +14,7 @@
     background-color: ghostwhite;
 }
 .main span{
-    margin-right: 0.4em
+    margin-right: 0em
 }
 .main h5{
     margin-bottom: 2rem;
@@ -38,7 +38,7 @@
     font-weight: 500;
 }
 
-@media screen and (max-width:786px) {
+@media screen and (max-width:992px) {
     .main{
         flex:1;
     }

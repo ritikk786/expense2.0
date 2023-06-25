@@ -4,13 +4,14 @@ const loginInitialstate = {
     email : null,
     idToken : null,
     name : null,
+    propfilepicUrl : '/static/images/avatar/1.jpg',
 }
 const userlogin = createSlice({
     name : 'userlogin',
     initialState : loginInitialstate,
     reducers : {
         loginmange (state,action){
-            console.log(action)
+            // console.log(action)
             state.islogin = true;
             state.email = action.payload.useremail;
             state.idToken = action.payload.useridToken;
@@ -21,6 +22,15 @@ const userlogin = createSlice({
             state.email = null;
             state.idToken = null;
             state.name = null;
+            state.propfilepicUrl = '/static/images/avatar/1.jpg';
+        },
+        propfilmanage (state,action){
+            // console.log(action.payload)
+            state.propfilepicUrl = action.payload;
+        },
+        displayName (state, action){
+            // console.log(action.payload)
+            state.name = action.payload
         }
     }
 })

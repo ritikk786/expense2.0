@@ -6,6 +6,7 @@ import useHook from '../../Hooks/useHook';
 import { useNavigate } from 'react-router';
 import { userloginAction } from '../../Store/uselogin';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
  const AuthForm = () => {
@@ -13,6 +14,7 @@ import { useDispatch } from 'react-redux';
   //navigaton 
   const navigate = useNavigate();
 
+  //firebase project name expense2
   const APIKEY = 'AIzaSyAsE7sYP8Q3m1zenmQ1gYVd8NFWaZ3qMuY';
   //custom hook function
   const {sendRequest,isLoading} = useHook();
@@ -41,7 +43,7 @@ import { useDispatch } from 'react-redux';
     // function of switch to login or signup
   const switchloginsigin = (e)=>{
     e.preventDefault()
-    console.log(isLogin)
+    // console.log(isLogin)
     setIsLogin((prevState)=> !prevState)
 }
 
@@ -50,7 +52,7 @@ const submithandler = async (e)=>{
   e.preventDefault();
 
   if(isLogin){
-    console.log(email.current.value, password.current.value)
+    // console.log(email.current.value, password.current.value)
     const savetoLocalstorage = async (data)=>{
       localStorage.setItem('token',data.idToken);
       localStorage.setItem('email',data.email);
@@ -78,7 +80,7 @@ const submithandler = async (e)=>{
   }
   else{
     if(passwordmatch){
-      console.log(email.current.value, password.current.value, confirmpassword.current.value)
+      // console.log(email.current.value, password.current.value, confirmpassword.current.value)
 
       const data = await sendRequest({
         url :`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${APIKEY}`,
@@ -90,7 +92,7 @@ const submithandler = async (e)=>{
         }
       })
       
-      console.log(data)
+      // console.log(data)
       setPasswrdmatch(false)
       alert('sucssfully added new acount')
       email.current.value='';
@@ -123,7 +125,7 @@ const submithandler = async (e)=>{
 
     <div className={Classes.divider}>OR</div>
 
-    {isLogin &&<p>Forgot password?</p>}
+    {isLogin &&<Link to='/update' className={Classes.a}>forgot password?</Link>}
     <div className={Classes.signupbtn}>
     <button onClick={switchloginsigin} >{isLogin ? 'Create new account' : 'already have an account'}</button>
     </div>

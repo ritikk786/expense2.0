@@ -13,8 +13,12 @@
     box-shadow: 1px 1px 6px 4px lightgray;
 }
 .header a{
-    position: absolute;
-    left: 14%;
+    /* position: absolute;
+    left: 14%; */
     font-size: 1.5rem;
     font-weight: 500;
+}
+.data{
+    display: flex;
+    align-items: center;
 }

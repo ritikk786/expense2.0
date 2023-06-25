@@ -2,31 +2,35 @@
     margin: 1rem auto;
   
 }
-.container p{
+.container a{
     margin: auto;
-    text-align: center;
+    /* text-align: center; */
     font-family: system-ui;
     font-weight: 600;
+    display: flex;
+    color: black;
+    justify-content: center;
+    text-decoration: none;
 }
 .container form{
     margin: 2rem auto 5px auto;
     width: 30em;
-    padding: 2rem;
-    font-size: 0.8rem;
+    padding: 1rem;
+    font-size: 1rem;
     border: 1px solid transparent;
     border-radius: 14px;
     box-shadow: -1px 1px 9px 4px lightgrey;
 
 }
 .container form input{
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin-bottom: 0.4rem;
 }
 .loginbutton button{
     width: 100%;
-    font-size: 0.8rem;
+    font-size: 1rem;
     border-radius: 20px;
-    font-size: 0.8rem;
+    
     padding: 0.2rem;
 }
 
@@ -71,7 +75,7 @@
     color: green;
     border: 1px solid #198754;
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding: 0.2rem;
     width: 100%;
     

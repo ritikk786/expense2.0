@@ -20,11 +20,18 @@ import LogoutIcon from '@mui/icons-material/Logout';
     
     <header className={Classes.header}>
     <Navbar bg="light" expand="lg" style={{position:'sticky', top:'0',zIndex:'10', boxShadow:'1px 1px 6px 4px lightgray'}}>
-    <Container>
+    <Container style={{flexWrap : 'nowrap'}}>
+      <div className={Classes.data}>
         <img src='https://m.media-amazon.com/images/I/61AxZXJ1u7L.png' width='40'/>
       <Navbar.Brand href="#home">Expense Tracker</Navbar.Brand>
+      </div>
+      <div>
+      {isUserLogin &&
       <Button variant="outline-success" onClick={logouthandler}>Logout
-      <LogoutIcon style={{marginLeft:'10px'}}/></Button>
+       <LogoutIcon style={{marginLeft:'0.2em'}}/></Button> 
+       }
+       </div> 
+      
       
     </Container>
   </Navbar>

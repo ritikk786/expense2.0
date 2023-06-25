@@ -1,12 +1,28 @@
 import React, { useRef } from 'react';
 import Classes from './ForgotPassword.module.css'
 import { Link } from 'react-router-dom';
-import { Button, Card, FloatingLabel, Form } from 'react-bootstrap';
+import { Button, Card, FloatingLabel, Form, Spinner } from 'react-bootstrap';
+import useHook from '../../Hooks/useHook';
 const ForgotPassword = ()=>{
     const email = useRef();
+    const {sendRequest,isLoading} = useHook();
 
-    const submithandler = ()=>{
-        console.log('submit')
+    const submithandler =  (e)=>{
+        e.preventDefault()
+        const sucess = (data)=>{
+            alert(`code sent to ${data.email}`)
+        }
+         sendRequest({
+            url : 'https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyAsE7sYP8Q3m1zenmQ1gYVd8NFWaZ3qMuY',
+            method : 'POST',
+            body : {
+                requestType :  'PASSWORD_RESET',
+                email : email.current.value,
+            }
+        },sucess)
+        
+        email.current.value='';
+        
     }
     return (
        <div className={Classes.container}>
@@ -27,8 +43,8 @@ const ForgotPassword = ()=>{
                        
                         <div className='d-grid gap-2'>
                             <Button className="btn btn-success" style={{borderRadius:'20px'}} type="submit"  >
-                            Find account
-                                
+                            {isLoading && <Spinner animation="border" size="sm" />}
+                            {!isLoading && 'Find you account'}
                             </Button>
                         </div>
                        
